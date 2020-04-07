@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design for Bootstrap</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/myProject/static/img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+
+  <div class="bg-image"></div>
+
+  <div class="bg-text">
+    <div class="row">
+
+      <div class="col-6">
+        <div class="dropdown">
+          <button class="btn blue-gradient btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-user-edit"></i> Login As Admin</button>
+          <div class="dropdown-menu dropdown-primary" style="width:60%;">
+            <div class="card" style="width:85%;margin:0 7%;">
+              <form class="border border-light">
+                <input type="text" class="form-control mb-4" placeholder="Enter username" name="username">
+                <input type="password" class="form-control" placeholder="Enter password" name="password">
+                <a href="/myProj/validateUser">
+                  <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="dropdown">
+          <button class="btn blue-gradient btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-user-graduate"></i> Login As Student</button>
+          <div class="dropdown-menu dropdown-primary" style="width:60%;">
+            <div class="card" style="width:85%;margin:0 7%">
+              <form class="border border-light">
+                <input type="text" class="form-control mb-4" placeholder="Enter username" name="username">
+                <input type="password" class="form-control" placeholder="Enter password" name="password">
+                <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+
+</body>
+
+</html>
