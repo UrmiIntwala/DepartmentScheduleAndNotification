@@ -37,12 +37,12 @@
             <i class="fas fa-user-edit"></i> Login As Admin</button>
           <div class="dropdown-menu dropdown-primary" style="width:60%;">
             <div class="card" style="width:85%;margin:0 7%;">
-              <form class="border border-light">
+              <form class="border border-light" action="/myProj/validateUser" method="POST">{% csrf_token %}
                 <input type="text" class="form-control mb-4" placeholder="Enter username" name="username">
                 <input type="password" class="form-control" placeholder="Enter password" name="password">
-                <a href="/myProj/validateUser">
+                
                   <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
-                </a>
+                
               </form>
             </div>
           </div>
@@ -56,7 +56,7 @@
             <i class="fas fa-user-graduate"></i> Login As Student</button>
           <div class="dropdown-menu dropdown-primary" style="width:60%;">
             <div class="card" style="width:85%;margin:0 7%">
-              <form class="border border-light">
+              <form class="border border-light" action="/myProj/validateUser" method="POST">{% csrf_token %}
                 <input type="text" class="form-control mb-4" placeholder="Enter username" name="username">
                 <input type="password" class="form-control" placeholder="Enter password" name="password">
                 <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
