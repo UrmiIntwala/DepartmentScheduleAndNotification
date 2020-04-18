@@ -51,18 +51,18 @@
     <div class="tab-content" id="pills-tabContent">
 
         <div class="tab-pane fade show active" id="pills-insert" role="tabpanel" aria-labelledby="pills-insert-tab">
-            <form class="text-center border border-light p-5 text-white aqua-gradient" action="#!">
+            <form class="text-center border border-light p-5 text-white aqua-gradient" action="/myProj/inserttimetable" method="POST">{% csrf_token %}
                 <p class="h4 mb-4">Details of TimeTable</p>
                 <div class="row justify-content-around">
                     <div class="col-4 ">
                         <div class="md-form">
-                            <input type="text" id="branch" class="form-control">
+                            <input type="text" id="branch" class="form-control" name="branch">
                             <label for="branch" class="text-white font-weight-bold">Branch</label>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="md-form">
-                            <input type="number" id="year" class="form-control">
+                            <input type="number" id="year" class="form-control" name="year">
                             <label for="year" class="text-white font-weight-bold">Year</label>
                         </div>
                     </div>
@@ -70,13 +70,13 @@
                 <div class="row justify-content-around">
                     <div class="col-4">
                         <div class="md-form">
-                            <input type="text" id="division" class="form-control">
+                            <input type="text" id="division" class="form-control" name="division">
                             <label for="division" class="text-white font-weight-bold">Division</label>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="md-form">
-                            <input type="text" id="subject" class="form-control">
+                            <input type="text" id="subject" class="form-control" name="subject">
                             <label for="subject" class="text-white font-weight-bold">Subject</label>
                         </div>
                     </div>
@@ -84,13 +84,13 @@
                 <div class="row justify-content-around">
                     <div class="col-4">
                         <div class="md-form">
-                            <input type="time" id="time" class="form-control">
+                            <input type="time" id="time" class="form-control" name="time">
                             <label for="time" class="text-white font-weight-bold">Time</label>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="md-form">
-                            <input type="text" id="classroom" class="form-control">
+                            <input type="text" id="classroom" class="form-control" name="classroom">
                             <label for="classroom" class="text-white font-weight-bold">Classroom</label>
                         </div>
                     </div>
@@ -98,13 +98,13 @@
                 <div class="row justify-content-around">
                     <div class="col-4">
                         <div class="md-form">
-                            <input type="text" id="faculty" class="form-control">
+                            <input type="text" id="faculty" class="form-control" name="faculty">
                             <label for="faculty" class="text-white font-weight-bold">Faculty</label>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="md-form ">
-                            <input type="text" id="day" class="form-control">
+                            <input type="text" id="day" class="form-control" name="day">
                             <label for="day" class="text-white font-weight-bold">Day</label>
                         </div>
                     </div>
@@ -122,9 +122,9 @@
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select class</button>
 
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">Faculty-wise</a>
+                    <a class="dropdown-item" href="#">Subject-wise</a>
+                    <a class="dropdown-item" href="#">Class-wise</a>
                 </div>
                 <!-- Basic dropdown -->
             </div>

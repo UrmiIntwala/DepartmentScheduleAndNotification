@@ -3,5 +3,6 @@ from . import views
 urlpatterns = [
 	url(r'^home/',views.HomePageView.as_view()),
 	url(r'^$',views.login),
-    url(r'^validateUser',views.validateUser)
+    url(r'^validateUser',views.validateUser),
+    url(r'^inserttimetable',views.insert_timetable)
 ]
