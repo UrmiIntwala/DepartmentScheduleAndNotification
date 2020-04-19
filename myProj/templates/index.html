@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
   {% load static %}
+<head>
+ 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -34,7 +34,7 @@
         <div class="dropdown">
           <button class="btn blue-gradient btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <i class="fas fa-user-edit"></i> Login As Admin</button>
+            <i class="fas fa-user-edit"></i> Login As Faculty</button>
           <div class="dropdown-menu dropdown-primary" style="width:60%;">
             <div class="card" style="width:85%;margin:0 7%;">
               <form class="border border-light" action="/myProj/validateUser" method="POST">{% csrf_token %}
@@ -56,8 +56,9 @@
             <i class="fas fa-user-graduate"></i> Login As Student</button>
           <div class="dropdown-menu dropdown-primary" style="width:60%;">
             <div class="card" style="width:85%;margin:0 7%">
-              <form class="border border-light" action="/myProj/validateUser" method="POST">{% csrf_token %}
+              <form class="border border-light" action="/myProj/validatestudent" method="POST">{% csrf_token %}
                 <input type="text" class="form-control mb-4" placeholder="Enter username" name="username">
+                
                 <input type="password" class="form-control" placeholder="Enter password" name="password">
                 <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
               </form>

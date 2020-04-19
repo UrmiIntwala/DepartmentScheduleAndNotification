@@ -1,7 +1,7 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-
+    {% load static %}
 <head>
     
     <meta charset="UTF-8">
@@ -57,15 +57,22 @@
             <a class="nav-link" id="pills-subject-tab" data-toggle="pill" href="#pills-subject" role="tab" aria-controls="pills-subject"
                 aria-selected="false" style="color:white">Subject-wise TimeTable</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-insert-event-tab" data-toggle="pill" href="#pills-insert-event" role="tab" aria-controls="pills-subject"
+                aria-selected="false" style="color:white">Insert Event</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-event-tab" data-toggle="pill" href="#pills-events" role="tab" aria-controls="pills-subject"
+                aria-selected="false" style="color:white">Events</a>
+        </li>
     </ul>
 
 
 
 
     <div class="tab-content" id="pills-tabContent">
-
         <div class="tab-pane fade show active" id="pills-insert" role="tabpanel" aria-labelledby="pills-insert-tab">
-            <form class="text-center border border-light p-5 text-white aqua-gradient" action="/myProj/inserttimetable" method="POST">{% csrf_token %}
+            <form class="text-center border border-light p-5 text-white aqua-gradient" action="/myProj/inserttimetable" method="POST"> {% csrf_token %}
                 <p class="h4 mb-4">Details of TimeTable</p>
                 <div class="row justify-content-around">
                     <div class="col-4 ">
@@ -128,6 +135,7 @@
         </div>
 
 
+
         <div class="tab-pane" id="pills-student" role="tabpanel" aria-labelledby="pills-student-tab">
             <div class="container-fluid aqua-gradient" style="position:absolute;height:95%">
                 <div class="row">
@@ -139,12 +147,12 @@
                     <option>Select Year</option>
                     <option  href="#">2016</option>
                     <option  href="#">2017</option>
-                    <optiona  href="#">2018</option>
+                    <option  href="#">2018</option>
                     <option  href="#">2019</option>
-                </select><br><br>
+                </select><br>
                 <!-- Basic dropdown -->
                 </div>
-                <div class="col-2">
+                <div class="col-2"><br>
                 <!-- Basic dropdown -->
                 <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Branch</button> -->
 
@@ -157,7 +165,9 @@
                     <option  href="#">CV</option>
                     <option  href="#">MH</option>
                     <option  href="#">IC</option>
-                </select><br><br>
+                </select><br>
+            </div>
+                <div class="col-2"><br>
                 <!-- Basic dropdown -->
                 <!-- Basic dropdown -->
                 <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Class</button> -->
@@ -166,17 +176,11 @@
                     <option >Select Div</option>
                     <option  href="#">A</option>
                     <option  href="#">B</option>
-                    <option  href="#">C</option>
-                    <option  href="#">D</option>
-                    <option  href="#">E</option>
-                    <option  href="#">F</option>
-                    <option  href="#">G</option>
-                    <option  href="#">H</option>
                 </select>
-
+            </div>
                 
                 <!-- Basic dropdown -->
-            </div>
+            
             <div class="col-9">
                 <div class="card" style="margin-right:50px;margin-top:10px;padding:5px 5px 0 5px;">
                     <!--Table-->
@@ -202,79 +206,211 @@
                                 <th scope="row" class="blue white-text">Monday</th>
                                 <td>Maths
                                     <br /> SPM
-                                    <br />R2</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
+                                    <br />C2
+                                </td>
+                                <td>
+                                    AI<br/>
+                                    AMS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row" class="blue white-text">Tuedsay</th>
                                 <td>Maths
                                     <br /> SPM
-                                    <br />R2</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
+                                    <br />C2
+                                </td>
+                                <td>
+                                    AI<br/>
+                                    AMS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row" class="blue white-text">Wednesday</th>
                                 <td>Maths
                                     <br /> SPM
-                                    <br />R2</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
+                                    <br />C2
+                                </td>
+                                <td>
+                                    AI<br/>
+                                    AMS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row" class="blue white-text">Thursday</th>
                                 <td>Maths
                                     <br /> SPM
-                                    <br />R2</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
+                                    <br />C2
+                                </td>
+                                <td>
+                                    AI<br/>
+                                    AMS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row" class="blue white-text">Friday</th>
                                 <td>Maths
                                     <br /> SPM
-                                    <br />R2</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
+                                    <br />C2
+                                </td>
+                                <td>
+                                    AI<br/>
+                                    AMS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row" class="blue white-text">Saturday</th>
                                 <td>Maths
                                     <br /> SPM
-                                    <br />R2</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
+                                    <br />C2
+                                </td>
+                                <td>
+                                    AI<br/>
+                                    AMS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
+                                <td>
+                                    ML<br>
+                                    SPS<br>C2
+                                </td>
                             </tr>
                         </tbody>
                         <!--Table body-->
@@ -287,21 +423,112 @@
         </div>
 
 
-        <div class="tab-pane fade" id="pills-faculty" role="tabpanel" aria-labelledby="pills-faculty-tab">Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis
-            ipsum nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat
-            irure ex labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat
-            excepteur aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem. Ullamco ut
-            ad minim do mollit labore ipsum laboris ipsum commodo sunt tempor enim incididunt. Commodo quis sunt dolore aliquip
-            aute tempor irure magna enim minim reprehenderit. Ullamco consectetur culpa veniam sint cillum aliqua incididunt
-            velit ullamco sunt ullamco quis quis commodo voluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua
-            pariatur mollit voluptate voluptate consequat non.</div>
 
 
-        <div class="tab-pane fade" id="pills-subject" role="tabpanel" aria-labelledby="pills-suject-tab">Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo
-            est sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt.
-            Qui minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing
-            ut in id occaecat pariatur ut ullamco ea tempor duis.</div>
+        <div class="tab-pane fade" id="pills-faculty" role="tabpanel" aria-labelledby="pills-faculty-tab">
+            <div class="container-fluid aqua-gradient" style="position:absolute;height:95%">
+            
+                <div class="col-9">
+                    <div class="card" style="margin-right:50px;margin-top:10px;padding:5px 5px 0 5px;">
+                        <!--Table-->
+                        <table id="timetable" class="table table-bordered text-center table-sm">
+                        <!--Table head-->
+                        <thead class="blue white-text">
+                            
+                            <tr>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Subject</th>
+                                <th>Class</th>
+                                <th>Year</th>
+                                <th>Branch</th>
+                                <th>Division</th>
+                                
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+                        <!--Table body-->
+                        <tbody>
+                            {%for objects in infofaculty%}
+                            <tr>
+                                <th scope="row" class="blue white-text">{{objects.day}}</th>
+                                <td>{{objects.time}}</td>
+                                <td>{{objects.subject}}</td>
+                                <td>{{objects.classroom}}</td>
+                                <td>{{objects.year}}</td>
+                                <td>{{objects.branch}}</td>
+                                <td>{{objects.division}}</td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+            </div>
+          
+        </div>
     </div>
+
+
+
+
+    <div class="tab-pane fade" id="pills-subject" role="tabpanel" aria-labelledby="pills-suject-tab">
+        <div class="container-fluid aqua-gradient" style="position:absolute;height:95%">{% csrf_token %}
+        <div class="row justify-content-around">
+            <div class="col-4">
+                <div class="md-form">
+                    <input type="text" id="subjectsearch" class="form-control" name="subjectsearch">
+                    <label for="subject" class="text-white font-weight-bold">Subject</label>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div class="col-9">
+                <div class="card" style="margin-right:50px;margin-top:10px;padding:5px 5px 0 5px;">
+                    <!--Table-->
+                    <table id="timetable" class="table table-bordered text-center table-sm">
+                    <!--Table head-->
+                    <thead class="blue white-text">
+                        
+                        <tr>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Subject</th>
+                            <th>Class</th>
+                            <th>Year</th>
+                            <th>Branch</th>
+                            <th>Division</th>
+                            
+                        </tr>
+                    </thead>
+                    <!--Table head-->
+                    <!--Table body-->
+                    <tbody>
+                        {%for objects in infofaculty%}
+                        <tr>
+                            <th scope="row" class="blue white-text">{{objects.day}}</th>
+                            <td>{{objects.time}}</td>
+                            <td>{{objects.subject}}</td>
+                            <td>{{objects.classroom}}</td>
+                            <td>{{objects.year}}</td>
+                            <td>{{objects.branch}}</td>
+                            <td>{{objects.division}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                    <!--Table body-->
+                </table>
+                <!--Table-->
+            </div>
+        </div>
+      
+    </div>
+    </div>
+
+
+</div>
 
     <!-- End your project here-->
 

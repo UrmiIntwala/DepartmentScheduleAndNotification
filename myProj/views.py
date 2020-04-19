@@ -15,26 +15,59 @@ class HomePageView(TemplateView):
 def login(request):
 	return render(request, 'index.html')
 
+def validatestudent(request):
+	username = request.POST.get('username', '')
+	password = request.POST.get('password', '')
+	user1 = UserDetails.objects.filter(user=username)
+	if user1 is not None:
+		for u in user1:
+			if u.pwd!=password:
+				msg="Incorrect password"
+				return render_to_response('index.html',{'message':msg})
+		request.session["role"]="student"
+		return render_to_response('student.html',{'studentid':username})
+	else:
+		return render(request,'index.html')
+
+		
 def validateUser(request):
 	username = request.POST.get('username', '')
-	print(username)
 	password = request.POST.get('password', '')
-	print(password)
-	user1 = UserDetails.objects.filter(user=username, pwd=password)
-	for i in user1:
-		print(i)
-		request.session["username"] = username
+	user1 = UserDetails.objects.filter(user=username)
 	if user1 is not None:
-		#request.session["role"]=user1.role
-		return render(request, 'admin.html')
+		for u in user1:
+			if u.pwd!=password:
+				msg="Incorrect password"
+				return render_to_response('index.html',{'message':msg})
+	
+		request.session["role"]="faculty"
+		request.session["username"]=username
+		#added
+		#role=request.session.get["role"]
+		#if role=="faculty":
+		facultyname=request.session["username"]
+		info_1 = TimeTable.objects.filter(faculty= facultyname)
+		print(info_1)
+			
+		#else:
+		#	return render(request,'index.html')
+		#added end
+		subject=request.POST.get("subjectsearch")
+		info2=TimeTable.objects.filter(subject=subject)
+		return render_to_response('admin.html', {'infofaculty':info_1},{'infosubject':info2})
 	else:
-		return render(request, 'index.html')
+		msg="User doesnot exist"
+		return render_to_response('index.html',{'message',msg})
 
 def timetable_faculty(request):
-	#searchname = request.POST.get('facultyname', '')
-	info_1 = TimeTable.objects.filter(faculty_name = "CKB")
-	print(info_1)
-	return render_to_response('admin.html', {'infofaculty':info_1})
+	role=request.session["role"]
+	if role=="faculty":
+		facultyname=request.session["username"]
+		info_1 = TimeTable.objects.filter(faculty = "CKB")
+		print(info_1)
+		return render_to_response('admin.html', {'infofaculty':info_1})
+	else:
+		return render(request,'index.html')
 	
 def timetable_subject(request):
 	searchname = request.POST.get('subject', '')
