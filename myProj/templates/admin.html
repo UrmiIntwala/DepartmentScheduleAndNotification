@@ -22,6 +22,20 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
+<style>
+    select{
+        background-color: rgb(33,150,243);
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    option{
+        background-color: antiquewhite;
+        color:black
+    }
+</style>
 <body>
 
     <!-- Start your project here-->
@@ -40,7 +54,7 @@
                 aria-selected="false" style="color:white">Faculty-wise TimeTable</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="pills-subject-tab" data-toggle="pill" href="#pills-subjectt" role="tab" aria-controls="pills-subject"
+            <a class="nav-link" id="pills-subject-tab" data-toggle="pill" href="#pills-subject" role="tab" aria-controls="pills-subject"
                 aria-selected="false" style="color:white">Subject-wise TimeTable</a>
         </li>
     </ul>
@@ -119,42 +133,46 @@
                 <div class="row">
                     <div class="col-2">
                 <!-- Basic dropdown -->
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Year</button>
+                <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Year</button> -->
+                        <br>
+                <select onchange="updateStatus(this);">
+                    <option>Select Year</option>
+                    <option  href="#">2016</option>
+                    <option  href="#">2017</option>
+                    <optiona  href="#">2018</option>
+                    <option  href="#">2019</option>
+                </select><br><br>
+                <!-- Basic dropdown -->
+                <!-- Basic dropdown -->
+                <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Branch</button> -->
 
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">2016</a>
-                    <a class="dropdown-item" href="#">2017</a>
-                    <a class="dropdown-item" href="#">2018</a>
-                    <a class="dropdown-item" href="#">2019</a>
-                </div>
+                <select onchange="updateStatus(this);">
+                    <option >Select Branch</option>
+                    <option href="#">CE</option>
+                    <option  href="#">IT</option>
+                    <option  href="#">EC</option>
+                    <option  href="#">CH</option>
+                    <option  href="#">CV</option>
+                    <option  href="#">MH</option>
+                    <option  href="#">IC</option>
+                </select><br><br>
                 <!-- Basic dropdown -->
                 <!-- Basic dropdown -->
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Branch</button>
+                <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Class</button> -->
 
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">CE</a>
-                    <a class="dropdown-item" href="#">IT</a>
-                    <a class="dropdown-item" href="#">EC</a>
-                    <a class="dropdown-item" href="#">CH</a>
-                    <a class="dropdown-item" href="#">CV</a>
-                    <a class="dropdown-item" href="#">MH</a>
-                    <a class="dropdown-item" href="#">IC</a>
-                </div>
-                <!-- Basic dropdown -->
-                <br>
-                <!-- Basic dropdown -->
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Class</button>
+                <select onchange="updateStatus(this);">
+                    <option >Select Div</option>
+                    <option  href="#">A</option>
+                    <option  href="#">B</option>
+                    <option  href="#">C</option>
+                    <option  href="#">D</option>
+                    <option  href="#">E</option>
+                    <option  href="#">F</option>
+                    <option  href="#">G</option>
+                    <option  href="#">H</option>
+                </select>
 
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">A</a>
-                    <a class="dropdown-item" href="#">B</a>
-                    <a class="dropdown-item" href="#">C</a>
-                    <a class="dropdown-item" href="#">D</a>
-                    <a class="dropdown-item" href="#">E</a>
-                    <a class="dropdown-item" href="#">F</a>
-                    <a class="dropdown-item" href="#">G</a>
-                    <a class="dropdown-item" href="#">H</a>
-                </div>
+                
                 <!-- Basic dropdown -->
             </div>
             <div class="col-9">
@@ -295,6 +313,20 @@
     <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
     <!-- Your custom scripts (optional) -->
     <script type="text/javascript"></script>
+
+    <script>
+    function updateStatus(changedSelect) {
+        console.log($(changedSelect).val());
+        $.ajax({
+            type: 'GET', 
+            url: 'print.php',
+            data: {stat: $(changedSelect).val()},
+            success: function (data) {
+                alert('done');
+            }
+        })
+        }
+    </script>
 
 </body>
 
