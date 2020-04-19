@@ -31,8 +31,9 @@ def validateUser(request):
 		return render(request, 'index.html')
 
 def timetable_faculty(request):
-	searchname = request.POST.get('facultyname', '')
-	info_1 = TimeTable.objects.filter(faculty_name = searchname)
+	#searchname = request.POST.get('facultyname', '')
+	info_1 = TimeTable.objects.filter(faculty_name = "CKB")
+	print(info_1)
 	return render_to_response('admin.html', {'infofaculty':info_1})
 	
 def timetable_subject(request):
