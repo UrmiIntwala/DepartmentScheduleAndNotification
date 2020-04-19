@@ -58,11 +58,11 @@
                 aria-selected="false" style="color:white">Subject-wise TimeTable</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="pills-insert-event-tab" data-toggle="pill" href="#pills-insert-event" role="tab" aria-controls="pills-subject"
+            <a class="nav-link" id="pills-insert-event-tab" data-toggle="pill" href="#pills-insert-event" role="tab" aria-controls="pills-insert-event"
                 aria-selected="false" style="color:white">Insert Event</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="pills-event-tab" data-toggle="pill" href="#pills-events" role="tab" aria-controls="pills-subject"
+            <a class="nav-link" id="pills-event-tab" data-toggle="pill" href="#pills-events" role="tab" aria-controls="pills-events"
                 aria-selected="false" style="color:white">Events</a>
         </li>
     </ul>
@@ -525,6 +525,109 @@
         </div>
       
     </div>
+    </div>
+
+
+
+
+    <div class="tab-pane fade show active" id="pills-insert-event" role="tabpanel" aria-labelledby="pills-insert-event-tab">
+        <form class="text-center border border-light p-5 text-white aqua-gradient" action="/myProj/createEvent" method="POST">{% csrf_token %}
+            <p class="h4 mb-4">Details of Events</p><br>
+            <div class="row justify-content-around">
+                <div class="col-4 ">
+                    <div class="md-form">
+                        <input type="text" id="event_name" class="form-control" name="event_name">
+                        <label for="name" class="text-white font-weight-bold">Name</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        <input type="text" id="event_descr" class="form-control" name="event_descr">
+                        <label for="desc" class="text-white font-weight-bold">Description</label>
+                    </div>
+                </div>
+            </div><br>
+            <div class="row justify-content-around">
+                <div class="col-4">
+                    <div class="md-form">
+                        <input type="text" id="event_venue" class="form-control" name="event_venue">
+                        <label for="venue" class="text-white font-weight-bold">Venue</label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="md-form">
+                        <input type="date" id="event_date" class="form-control" name="event_date">
+                        <label for="date" class="text-white font-weight-bold">Date</label>
+                    </div>
+                </div>
+            </div><br>
+            <div class="row justify-content-around">
+                <div class="col-4">
+                    <div class="md-form">
+                        <input type="text" id="event_organizer" class="form-control" name="event_organizer">
+                        <label for="organizer" class="text-white font-weight-bold">Organizer</label>
+                    </div>
+                </div>                    
+            </div><br>
+            <button class="btn my-4 font-weight-bold blue-gradient" type="submit" style="width:50%;font-size: 110%">Insert</button>
+        </form>
+    </div>
+
+
+    <div class="tab-pane fade" id="pills-events" role="tabpanel" aria-labelledby="pills-events-tab">
+        <div class="container-fluid aqua-gradient" style="position:absolute;height:95%">
+            <div class="row">
+                <div class="col-1">            
+        </div>
+        <div class="col-10">
+            <div class="card" style="margin-right:50px;margin-top:10px;padding:5px 5px 0 5px;">
+                <!--Table-->
+                <table id="timetable" class="table table-bordered text-center table-sm">
+                    <!--Table head-->
+                    <thead class="blue white-text">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Venue</th>
+                            <th>Date</th>
+                            <th>Organizer</th>                                
+                        </tr>
+                    </thead>
+                    <!--Table head-->
+                    <!--Table body-->
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="blue white-text">1</th>
+                            <td>Reqruitment for DDUConnect</td>
+                            <td>room1</td>
+                            <td>25/11/2020</td>
+                            <td>Head of DDUConnect</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="blue white-text">2</th>
+                            <td>Star of DDU</td>
+                            <td>Library Garden</td>
+                            <td>01/06/2020</td>
+                            <td>NSS group</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="blue white-text">3</th>
+                            <td>Coding Competition</td>
+                            <td>Lab 1</td>
+                            <td>26/04/2020</td>
+                            <td>CE department</td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                    <!--Table body-->
+                </table>
+                <!--Table-->
+            </div>
+        </div>
+        </div>
+        </div>
+
     </div>
 
 

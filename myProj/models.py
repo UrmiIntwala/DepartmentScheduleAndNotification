@@ -25,10 +25,5 @@ class Faculty(models.Model):
 	faculty_phonenumber=models.IntegerField
 	faculty_branch=models.CharField(max_length=2,default="")
 
-class Classes(models.Model):
-	branch=models.CharField(max_length=2,default="")
-	division=models.CharField(max_length=1,default="")
-	class Meta:
-		unique_together = (('branch', 'division'),)
 
 #time table - class year div faculty sub time roomno 
