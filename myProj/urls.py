@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^inserttimetable',views.insert_timetable),
 	url(r'^studentwisepage',views.timetable_class),
 	url(r'^subjectwisepage',views.timetable_subject),
-	url(r'^facultywisepage',views.timetable_faculty)
+	url(r'^facultywisepage',views.timetable_faculty),
+	url('mails',views.mail,name='mail')
 ]

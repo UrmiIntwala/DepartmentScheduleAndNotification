@@ -6,6 +6,9 @@ from django.db import connection
 from django.shortcuts import render_to_response
 from TimeTable.models import TimeTable
 from django.http import HttpResponse
+from datetime import date
+from django.core.mail import send_mail
+from myProject import settings 
 
 # Create your views here.
 class HomePageView(TemplateView):
@@ -29,7 +32,7 @@ def validatestudent(request):
 	else:
 		return render(request,'index.html')
 
-		
+
 def validateUser(request):
 	username = request.POST.get('username', '')
 	password = request.POST.get('password', '')
@@ -94,3 +97,16 @@ def insert_timetable(request):
 	timetable = TimeTable(branch=branch, year=year, division=division, day=day, subject=subject, time=time, classroom=classroom, faculty=faculty)
 	timetable.save()
 	return render(request, 'admin.html')
+
+
+def mail(request):  
+	subject = "Event"  
+	msg     = "There is a event you have participated in 'Star of College' on the date:" + str(date.today())
+	to      = "toexample@gmail.com"  
+	res     = send_mail(subject, msg, settings.EMAIL_HOST_USER, [to])  
+	if(res == 1):  
+		msg = "Mail Sent Successfuly"  
+	else:  
+		msg = "Mail could not sent"  
+	return HttpResponse(msg)
+	
