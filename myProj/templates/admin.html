@@ -585,10 +585,9 @@
                 <table id="timetable" class="table table-bordered text-center table-sm">
                     <!--Table head-->
                     <thead class="blue white-text">
-                        <tr>
-                            <th>#</th>
+                        <tr>                            
                             <th>Name</th>
-                            <th>Venue</th>
+                            <th>Description</th>
                             <th>Date</th>
                             <th>Organizer</th>                                
                         </tr>
@@ -596,29 +595,16 @@
                     <!--Table head-->
                     <!--Table body-->
                     <tbody>
-                        <tr>
-                            <th scope="row" class="blue white-text">1</th>
-                            <td>Reqruitment for DDUConnect</td>
-                            <td>room1</td>
-                            <td>25/11/2020</td>
-                            <td>Head of DDUConnect</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="blue white-text">2</th>
-                            <td>Star of DDU</td>
-                            <td>Library Garden</td>
-                            <td>01/06/2020</td>
-                            <td>NSS group</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="blue white-text">3</th>
-                            <td>Coding Competition</td>
-                            <td>Lab 1</td>
-                            <td>26/04/2020</td>
-                            <td>CE department</td>
+					{%for event in infoevents%}
+                        <tr>                            
+                            <td>{{event.event_name}}</td>
+                            <td>{{event.event_descr}}</td>
+                            <td>{{event.event_venue}}</td>
+                            <td>{{event.event_organizer}}</td>
                         </tr>
                         
                         
+                    {%endfor%}
                     </tbody>
                     <!--Table body-->
                 </table>

@@ -9,6 +9,23 @@ from django.http import HttpResponse
 from datetime import date
 from django.core.mail import send_mail
 from myProject import settings 
+from Events.models import Events
+
+def create_event(request):
+	event_name=request.POST.get('event_name', '')
+	event_descr=request.POST.get('event_descr', '')
+	event_venue=request.POST.get('event_venue', '')
+	event_date=request.POST.get('event_date', '')
+	event_organizer=request.POST.get('event_organizer', '')	
+	event = Events(event_name=event_name, event_descr=event_descr, event_venue=event_venue, event_date=event_date, event_organizer=event_organizer,participants_list=[])
+	event.save()
+	return render(request, 'admin.html')
+	
+def get_events(request):
+	info_events = Events.objects.all()
+	return render_to_response('admin.html', {'infoevents':info_events})
+
+
 
 # Create your views here.
 class HomePageView(TemplateView):
